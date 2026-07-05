@@ -8,7 +8,9 @@
 }
 
 .font-size-special {
-    font-size: 60px;
+    font-size: 80px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 body {
@@ -56,6 +58,14 @@ html, body{
 }
 
 .options {
-    display: flex
-
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+.translate-text{ 
+    font-size: 40px;
 }
