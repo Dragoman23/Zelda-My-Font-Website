@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "MyFontOutline-Regular";
+    src: url("../fonts/MyFontOutline-Regular.otf") format("opentype");
+    font-display: swap;
+}
+.my-font {
+    font-family: "MyFontOutline-Regular", sans-serif; /* fallback in case it fails to load */
+}
+
+.font-size-special {
+    font-size: 60px;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: lightblue;
+    color: white;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40px;
+}
+
+.main {
+    background-color: skyblue;
+    padding: 50px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 17.5px rgba(0,0,0,0.5);
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin: 0 0 10px 0;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-behavior: smooth; 
+}
+
+.options {
+    display: flex
+
+}
