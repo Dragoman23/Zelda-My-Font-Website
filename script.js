@@ -60,6 +60,5 @@ threeFrequencyButton.addEventListener('click', function() {
 })
 
 backToOriginalButton.addEventListener('click', function() {
-    specialText.textContent = "This language is written in the Zelda-based language of the Sheikah. This is a challenge to translate this language. By solving this challenge you will get the passkey to go to the next website. The passkey is Glskh huk Spur, but that is not all. Using this passkey text, find the real passkey.";
-    specialText.className = "my-font";
+    document.querySelector(".translate-text").removeChild(p);
 })
