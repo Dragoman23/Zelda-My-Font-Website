@@ -69,3 +69,7 @@ html, body{
 .translate-text{ 
     font-size: 40px;
 }
+
+.normal-font {
+    font-family: sans-serif;
+}
