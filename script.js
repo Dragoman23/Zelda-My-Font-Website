@@ -1,6 +1,6 @@
 console.log("Script loaded successfully."); /check if the script is loaded/
 const frequencyButton = document.getElementById('frequency-button');
-const lengthButton = document.getElementById("word-lengths-button");
+const lengthFrequencyButton = document.getElementById("word-lengths-button");
 const oneLetterButton = document.getElementById("isolate-words-button");
 const threeFrequencyButton = document.getElementById("most-frequent-button");
 const backToOriginalButton = document.getElementById("back-to-original-button");
@@ -8,12 +8,12 @@ const vowelFrequencyButton = document.getElementById("vowel-frequency");
 
 const specialText = document.querySelector(".translate-text p");
 
-
-
-const p = document.createElement("p");
+const p1 = document.createElement("p1");
+const p2 = document.createElement("p2");
+const p3 = document.createElement("p3");
 
 frequencyButton.addEventListener('click', function() {
-    p.innerHTML = `
+    p1.innerHTML = `
         <span class="normal-font">Number of</span> <span class="my-font">E</span> <span class="normal-font">: 28</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">T</span> <span class="normal-font">: 27</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">S</span> <span class="normal-font">: 25</span><br>
@@ -23,7 +23,7 @@ frequencyButton.addEventListener('click', function() {
         <span class="normal-font">Number of</span> <span class="my-font">L</span> <span class="normal-font">: 16</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">G</span> <span class="normal-font">: 13</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">N</span> <span class="normal-font">: 12</span><br>
-        <span class="normal-font">Number of</span> <span class="my-font">0</span> <span class="normal-font">: 8</span><br>
+        <span class="normal-font">Number of</span> <span class="my-font">O</span> <span class="normal-font">: 8</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">U</span> <span class="normal-font">: 8</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">K</span> <span class="normal-font">: 7</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">Y</span> <span class="normal-font">: 6</span><br>
@@ -40,13 +40,15 @@ frequencyButton.addEventListener('click', function() {
         <span class="normal-font">Number of</span> <span class="my-font">J</span> <span class="normal-font">: 0</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">M</span> <span class="normal-font">: 0</span><br>
         <span class="normal-font">Number of</span> <span class="my-font">Q</span> <span class="normal-font">: 0</span><br>
-    `;
-    document.querySelector(".translate-text").appendChild(p);
+    `; 
+    document.querySelector(".translate-text").appendChild(p1);
 })
 
-lengthButton.addEventListener('click', function () {
-    specialText.textContent = "Word Frequency";
-    specialText.className = "container";
+lengthFrequencyButton.addEventListener('click', function () {
+    p3.innerHTML = `
+    
+    `;
+    document.querySelector(".translate-text").appendChild(p3);
 })
 
 oneLetterButton.addEventListener('click', function() {
@@ -59,6 +61,20 @@ threeFrequencyButton.addEventListener('click', function() {
     specialText.className = "container";
 })
 
+vowelFrequencyButton.addEventListener('click', function() {
+    p2.innerHTML = `
+        <span class="normal-font">Number of</span> <span class="my-font">E</span> <span class="normal-font">: 28</span><br>
+        <span class="normal-font">Number of</span> <span class="my-font">A</span> <span class="normal-font">: 21</span><br>
+        <span class="normal-font">Number of</span> <span class="my-font">I</span> <span class="normal-font">: 17</span><br>
+        <span class="normal-font">Number of</span> <span class="my-font">O</span> <span class="normal-font">: 8</span><br>
+        <span class="normal-font">Number of</span> <span class="my-font">U</span> <span class="normal-font">: 8</span><br>
+    `;
+    document.querySelector(".translate-text").appendChild(p2);
+})
+
 backToOriginalButton.addEventListener('click', function() {
-    document.querySelector(".translate-text").removeChild(p);
+    document.querySelector(".translate-text").removeChild(p1);
+    document.querySelector(".translate-text").removeChild(p2);
+    document.querySelector(".translate-text").removeChild(p3);
+
 })
