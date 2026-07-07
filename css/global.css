@@ -4,7 +4,16 @@
     font-display: swap;
 }
 .my-font {
-    font-family: "MyFontOutline-Regular", sans-serif; /* fallback in case it fails to load */
+    font-family: "MyFontOutline-Regular", sans-serif; 
+    letter-spacing: 3px;
+    font-size: 80px;
+
+    color: #e6ffff;
+
+    text-shadow:
+        0 0 4px rgba(0, 243, 255, 0.9),
+        0 0 12px rgba(0, 243, 255, 0.6),
+        0 0 30px rgba(0, 243, 255, 0.3);
 }
 
 .font-size-special {
@@ -16,7 +25,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: lightblue;
+    background-color: #0b1114;
     color: white;
 }
 
@@ -30,7 +39,7 @@ body {
 }
 
 .main {
-    background-color: skyblue;
+    background-color: #1a1816;
     padding: 50px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -38,7 +47,7 @@ body {
     text-align: center;
     box-shadow: 0 0 17.5px rgba(0,0,0,0.5);
     font-size: 20px;
-    color: black;
+    color: white;
     display: inline-block;
 }
 
