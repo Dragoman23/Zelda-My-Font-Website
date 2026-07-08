@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, width.user-scalable=yes">
-    <title>Zelda Inspired Font Website</title>
+    <title>Zelda Inspired Font Website-Level 1</title>
     <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="my-font font-size-special">Zelda Inspired Font Website</h1>
+        <h1 class="my-font font-size-special">Zelda Inspired Font Website-Level 1</h1>
         <div class="main">
             <p>Try to translate this language</p>
-            <p>You will have a 4 options on how to begin translating.</p>
+            <p>You will have a 6 options on how to begin translating.</p>
             <p>Note: Punctuation has same font size as capital letters and there are no numbers in the following text block.</p>
             <div class="options">
                 <button id="frequency-button">Letter Frequency (Easiest)</button>
@@ -25,9 +25,10 @@
             <div class="translate-text">
                 <p class="my-font">This language is written in the Zelda-based language of the Sheikah. This is a challenge to translate this language. By solving this challenge you will get the passkey to go to the next website. The passkey is Glskh huk Spur, but that is not all. Using this passkey text, find the real passkey.</p>
             </div>
-            <input type="password" class="custom-input" placeholder="Enter the passkey you discovered: " data-passkey="Enter the passkey you discovered: ">
+            <input type="password" id="user-guess" class="custom-input" placeholder="Enter the passkey you discovered: ">
+            <p id="guess-feedback" class="feedback-message"></p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>
