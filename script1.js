@@ -7,18 +7,18 @@ const backToOriginalButton = document.getElementById("back-to-original-button");
 const vowelFrequencyButton = document.getElementById("vowel-frequency");
 const hintButton = document.getElementById("hint-button");
 
-const p1 = document.createElement("p1");
-const p2 = document.createElement("p2");
-const p3 = document.createElement("p3");
-const p4 = document.createElement("p4");
-const p5 = document.createElement("p5");
-const p6 = document.createElement("p6");
+const letter = document.createElement("letter");
+const vowel = document.createElement("vowel");
+const word = document.createElement("word");
+const one = document.createElement("one");
+const three = document.createElement("three");
+const hint = document.createElement("hint");
 
 const inputField = document.getElementById("user-guess");
 const feedbackMessage = document.getElementById("guess-feedback");
 
 frequencyButton.addEventListener('click', function() {
-    p1.innerHTML = `
+    letter.innerHTML = `
         <span class="normal-font">The frequency of</span> <span class="my-font">E</span> <span class="normal-font">is 28</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">T</span> <span class="normal-font">is 27</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">S</span> <span class="normal-font">is 25</span><br>
@@ -46,11 +46,11 @@ frequencyButton.addEventListener('click', function() {
         <span class="normal-font">The frequency of</span> <span class="my-font">M</span> <span class="normal-font">is 0</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">Q</span> <span class="normal-font">is 0</span><br>
     `; 
-    document.querySelector(".translate-text").appendChild(p1);
+    document.querySelector(".translate-text").appendChild(letter);
 })
 
 wordFrequencyButton.addEventListener('click', function () {
-    p3.innerHTML = `
+    word.innerHTML = `
         <span class="normal-font">Below is a list of all words with a frequency of more than 1.</span><br>
         <span class="normal-font">There are 32 unique words.</span><br>
         <span class="normal-font">The frequency of the word</span> <span class="my-font">the</span> <span class="normal-font">is 6</span><br>
@@ -62,46 +62,46 @@ wordFrequencyButton.addEventListener('click', function () {
         <span class="normal-font">The frequency of the word</span> <span class="my-font">challenge</span> <span class="normal-type">is 2</span><br>
         
     `;
-    document.querySelector(".translate-text").appendChild(p3);
+    document.querySelector(".translate-text").appendChild(word);
 })
 
 oneLetterButton.addEventListener('click', function() {
-    p4.innerHTML = `
+    one.innerHTML = `
         <span class="normal-font">This the only one 1-letter word:</span> <span class="my-font">a</span> <span class="normal-font">and it translates to A.</span><br>
     `;
-    document.querySelector(".translate-text").appendChild(p4);
+    document.querySelector(".translate-text").appendChild(one);
 })
 
 threeFrequencyButton.addEventListener('click', function() {
-    p5.innerHTML = `
+    three.innerHTML = `
         <span class="normal-font">The most common 3-letter word is</span> <span class="my-font">the</span> <span class="normal-font">which translates to THE.</span><br>
     `;
-    document.querySelector(".translate-text").appendChild(p5);
+    document.querySelector(".translate-text").appendChild(three);
 })
 
 vowelFrequencyButton.addEventListener('click', function() {
-    p2.innerHTML = `
+    vowel.innerHTML = `
         <span class="normal-font">The frequency of</span> <span class="my-font">E</span> <span class="normal-font">is 28</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">A</span> <span class="normal-font">is 21</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">I</span> <span class="normal-font">is 17</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">O</span> <span class="normal-font">is 8</span><br>
         <span class="normal-font">The frequency of</span> <span class="my-font">U</span> <span class="normal-font">is 8</span><br>
     `;
-    document.querySelector(".translate-text").appendChild(p2);
+    document.querySelector(".translate-text").appendChild(vowel);
 })
 
 hintButton.addEventListener('click', function() {
-    p6.innerHTML = `
+    hint.innerHTML = `
         <span class="normal-font">Hint: Julius Caesar</span><br>
     `  
-    document.querySelector(".translate-text").appendChild(p6);  
+    document.querySelector(".translate-text").appendChild(hint);  
 })
 
 backToOriginalButton.addEventListener('click', function() {
     const container = document.querySelector(".translate-text");
-    [p1,p2,p3,p4,p5,p6].forEach(p => {
-        if (container.contains(p)) {
-            container.removeChild(p);
+    [letter, word, vowel, one, three, hint].forEach(el => {
+        if (container.contains(el)) {
+            container.removeChild(el);
         }
     })
 })

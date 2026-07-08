@@ -85,6 +85,12 @@ html, body{
     padding: 10px 0;
 }
 
+.translate-text p.normal-font {
+    margin: 0;
+    line-height: 1.2;
+    padding: 10px 0px;
+}
+
 .normal-font {
     font-family: sans-serif;
 }
