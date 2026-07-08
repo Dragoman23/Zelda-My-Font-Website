@@ -5,6 +5,7 @@ const oneLetterButton = document.getElementById("isolate-words-button");
 const threeFrequencyButton = document.getElementById("most-frequent-button");
 const backToOriginalButton = document.getElementById("back-to-original-button");
 const vowelFrequencyButton = document.getElementById("vowel-frequency");
+const hintButton = document.getElementById("hint-button");
 
 const specialText = document.querySelector(".translate-text p");
 
@@ -12,7 +13,8 @@ const p1 = document.createElement("p1");
 const p2 = document.createElement("p2");
 const p3 = document.createElement("p3");
 const p4 = document.createElement("p4");
-const p5 = document.createElement("p5")
+const p5 = document.createElement("p5");
+const p6 = document.createElement("p6");
 
 frequencyButton.addEventListener('click', function() {
     p1.innerHTML = `
@@ -87,9 +89,16 @@ vowelFrequencyButton.addEventListener('click', function() {
     document.querySelector(".translate-text").appendChild(p2);
 })
 
+hintButton.addEventListener('click', function() {
+    p6.innerHTML = `
+        <span class="normal-font">Julius Caesar</span><br>
+    `  
+    document.querySelector(".translate-text").appendChild(p6);  
+})
+
 backToOriginalButton.addEventListener('click', function() {
     const container = document.querySelector(".translate-text");
-    [p1,p2,p3,p4].forEach(p => {
+    [p1,p2,p3,p4,p5,p6].forEach(p => {
         if (container.contains(p)) {
             container.removeChild(p);
         }

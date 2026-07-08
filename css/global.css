@@ -73,12 +73,32 @@ html, body{
     gap: 5px;
     margin-top: 10px;
     padding: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 .translate-text{ 
     font-size: 40px;
 }
 
+.translate-text p.my-font {
+    margin: 0;
+    line-height: 1.2;
+    padding: 10px 0;
+}
+
 .normal-font {
     font-family: sans-serif;
+}
+
+.custom-input {
+    width: 100%;
+    max-width: 500px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+#hint-button {
+    font-size: 15px;
+    padding: 15px;
 }
