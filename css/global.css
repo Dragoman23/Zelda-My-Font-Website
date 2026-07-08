@@ -125,3 +125,11 @@ html, body{
     color: red;
     text-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
 }
+
+.hidden-image {
+    display: none;
+}
+
+.hidden-image.revealed {
+    display: block;
+}
