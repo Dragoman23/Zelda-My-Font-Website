@@ -51,7 +51,7 @@ npx serve .
 or
 ```bash
 npx http-server .
-...
+```
 
 ## Project structure
 
