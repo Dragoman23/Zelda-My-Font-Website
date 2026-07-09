@@ -8,6 +8,7 @@ const translationButton = document.getElementById("translation-button");
 const groupingButton = document.getElementById("grouping");
 const normalizeButton = document.getElementById("full-translate");
 const coincidenceButton = document.getElementById("coincidence");
+const kasiskiButton = document.getElementById("kasiski");
 
 const letter = document.createElement("letter");
 const length = document.createElement("length");
@@ -18,11 +19,48 @@ const coincidence = document.createElement("coincidence");
 const swapText = document.querySelector(".translate-text p.my-font");
 const swap = document.createElement("swap");
 const originalText = swapText.innerHTML;
+const kasiski = document.createElement("kasiski");
 
+const inputField = document.getElementById("user-guess");
+const feedbackMessage = document.getElementById("guess-feedback");
+
+kasiskiButton.addEventListener('click', function() {
+    kasiski.innerHTML = `
+    <span class="normal-font"></span><br>
+    <span class="normal-font">One way we can find the length of the key is finding repeating letter seqeunces.</span><br>
+    <span class="normal-font">Identical sequences of 3 or more letters that appear multiple times in the ciphertext(after we remove spaces and puncuation) can help us find the length of the key.</span><br>
+    <span class="normal-font">By finding the distances between these repeating sequences, we can start to find possible key lengths.</span><br>
+    <span class="normal-font">Given you distances, find all the factors(divisors) and the key length is likely one of these factors, starting with the most common one.</span><br>
+    <span class="normal-font"></span><br>
+    <span class="normal-font">Now please don't use any of the other cipher hints because they would tell you too much. Something I can tell you is the key is somewhere in this website. Also Julius....(It will become clear eventually)</span><br>
+    <span class="normal-font"></span><br>
+    <span class="normal-font">Here are some confirmed patterns to get you started and we have removed the puncation and spaces from the text for you!(Ignore the spaces, they are for readability)</span><br>
+    <span class="normal-font">MYJTG: Positions 11 and 76, PER: Positions 83 and 192</span><br>
+    <span class="normal-font">There are two more patterns hiding somewhere in this text.</span><br>
+    <span class="normal-font"></span><br>
+    `
+
+    swapText.innerHTML = `
+
+    <span class="my-font"> F s z g j n f r h t s m y j t g v z x g 
+    g x s h f h v d w c g e w o e m k p e u
+    s x s l s n r p z i k p m h a a m e k a
+    q h p u I e c z x a q i c h a c m y j t
+    g m d p e r w l j e h x x h a m w j r u 
+    f s e w h q s f j h s l p f i o l p u b
+    t x e k a s m d q o s m e L t h w x d t
+    g x t p e m s h G o d w e k e m e x h V
+    k g g l r h r r d b d p w Z e k p s h h
+    z h l p a o e y g s n q p e r h h r h s 
+    S i w o m d x s h f k o e i d u s q k i 
+    r t c r b k i x S v i j t H f</span>
+    `
+    document.querySelector(".translate-text").append(kasiski);
+})
 
 backToOriginalButton.addEventListener('click', function() {
     const container = document.querySelector(".translate-text");
-    [letter, length, cipher, translation,swap, normalize].forEach(el => {
+    [letter, length, cipher, translation,swap, normalize, kasiski].forEach(el => {
         if (container.contains(el)) {
             container.removeChild(el);
         }
@@ -37,11 +75,18 @@ backToOriginalButton.addEventListener('click', function() {
 
 coincidenceButton.addEventListener('click', function() {
     coincidence.innerHTML= `
+    <span class="normal-font"></span><br>
     <span class="normal-font">One way to find the key length is to use the Index of Coincidence(IC).</span><br>
     <span class="normal-font">For normal English the IC is around 0.0667 (6.67%).</span><br>
     <span class="normal-font">Take every 2nd letter of the text and put it into a group. Calculate the IC of that group, and if it isn't close to 0.0667, 2 is wrong, so move on to 3 and etc.</span><br>
     <span class="normal-font">Once you find the correct length, your data will spike.</span><br>
-    <span class="normal-font">Have fun calculating!"</span><br>
+    <span class="normal-font"></span><br>
+    <span class="normal-font">Now please don't use the cipher or cipher length hint, because it would tell you too much.</span><br>
+    <span class="normal-font">Since you can't use the cipher hint, let me just say Julius...(It will become clear eventually)</span><br>
+    <span class="normal-font">Also, look around the website for possible keys....</span><br>
+    <span class="normal-font"></span><br>
+    <span class="normal-font">Have fun calculating!</span><br>
+    
     <span class="normal-font">To calculate the IC use the following formula: </span><br>
 
     <pre style="font-family: monospace; font-size: 16px; background-color: #000; padding: 5px; border-radius: 5px; line-height: 1.4; margin: 0;">
@@ -77,20 +122,25 @@ normalizeButton.addEventListener('click', function() {
 
 
 })
+
 mapButton.addEventListener('click', function() {
     document.getElementById('konigsberg-image').classList.add('revealed');
 });
 
 cipherButton.addEventListener('click', function() {
     cipher.innerHTML = `
+        <span class="normal-font"></span><br>
         <span class="normal-font">Vigenère: One of the words from the previous passkey</span><br>
-        <span class="normal-font">Julius: a -> r</span><br>
+        <span class="normal-font"></span><br>
+        <span class="normal-font">Julius: a -> r</span><br
+        <span class="normal-font"></span><br>>
     `/*maybe add my font to a - r*/
     document.querySelector(".translate-text").append(cipher)   
 });
 
 frequencyButton.addEventListener('click', function() {
     letter.innerHTML = `
+        <span class="normal-font"></span><br>
         <span class="normal-font">The frequency of H is 22</span><br>
         <span class="normal-font">The frequency of S is 19</span><br>
         <span class="normal-font">The frequency of E is 18</span><br>
@@ -115,18 +165,23 @@ frequencyButton.addEventListener('click', function() {
         <span class="normal-font">The frequency of C is 5</span><br>
         <span class="normal-font">The frequency of V is 4</span><br>
         <span class="normal-font">The frequency of Y is 3</span><br>
-        <span class ="normal-font">The frequency of N is 3</span><br>
+        <span class="normal-font">The frequency of N is 3</span><br>
         <span class="normal-font">The frequency of B is 3</span><br>
+        <span class="normal-font"></span><br>
     `
     document.querySelector(".translate-text").append(letter)
 });
 
 cipherLengthButton.addEventListener('click', function() {
     length.innerHTML=`
-    <span class="normal-font">The length of the V cipher is 5</span><br>
+    <span class="normal-font"></span><br>
+    <span class="normal-font">The length of the V cipher is 5. Look around the website for possible keys...</span><br>
+    <span class="normal-font"></span><br>
     <span class="normal-font">Now please don't use the cipher hint, because it would tell you too much.</span><br>
-    <span class="normal-font">Since you can't use the cipher hints, let me just say Julius...</span><br>
+    <span class="normal-font">Since you can't use the cipher hints, let me just say Julius...(It will become clear eventually)</span><br>
+    <span class="normal-font"></span><br>
     <span class="normal-font">Now get to grouping!!!</span><br>
+    <span class="normal-font"></span><br>
     `
     document.querySelector(".translate-text").append(length)
 })
@@ -134,6 +189,7 @@ cipherLengthButton.addEventListener('click', function() {
 translationButton.addEventListener('click', function() {
 //Some text was visual broken up to make it more readable
     translation.innerHTML = `
+    <span class="normal-font"></span><br>
     <span class="normal-font">Since you unlocked level 2, 
     I hope you have a pretty good understanding of the translations. 
     Here is a gift to reward your efforts!</span><br>
@@ -165,6 +221,7 @@ translationButton.addEventListener('click', function() {
     <span class="my-font">X</span><span class="normal-font">: X</span><br>
     <span class="my-font">Y</span><span class="normal-font">: Y</span><br>
     <span class="my-font">Z</span><span class="normal-font">: Z</span><br>
+    <span class="normal-font"></span><br>
     `
     document.querySelector(".translate-text").append(translation)
 });
@@ -178,9 +235,35 @@ DWEKE|MEXHV|KGGLR|HRRDB|DPWZE|KPSHH|ZHLPA|OEYGS|NQPER|HHRHS|
 SIWOM|DXSHF|KOEID|USQKI|RTCRB|KIXSV|IJTHF|</span>
 `
     swap.innerHTML =`
+    <span class="normal-font"></span><br>
     <span class="normal-font">Look at just the first letter of every group!</span><br>
     <span class="normal-font">Columns......</span><br>
+    <span class="normal-font"></span><br>
     `
 
     document.querySelector(".translate-text").append(swap)
 });
+
+inputField.addEventListener('keydown', function(event) {
+
+    if(event.key==='Enter') {
+
+        const userGuess = inputField.value.trim();
+
+        const correctPasskey = "No";
+
+        if (userGuess === correctPasskey) {
+            feedbackMessage.textContent = "Correct! You have completed the puzzle...";
+            feedbackMessage.className = "feedback-message show correct";
+
+            setTimeout(() => {
+                window.location.href = "challenge1.html";
+            }, 1200); 
+        } else {
+            feedbackMessage.textContent = "Wrong Passkey. Look at the text, hints, and ciphers again.";
+            feedbackMessage.className = "feedback-message show wrong";
+            inputField.value = "";
+
+        }
+    }
+})
