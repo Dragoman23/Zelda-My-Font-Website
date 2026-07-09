@@ -73,7 +73,7 @@ GitHub: [@Dragoman23](https://github.com/Dragoman23)
 
 Some AI was used to help with minimal amounts of debugging and to get me my frequencies and clear explanations of hints
 
-[Seven Bridges of Königsberg image]([https://share.google/f0emcEj0Utk65JWwu](https://commons.wikimedia.org/wiki/File:Bridges_of_Konigsberg.png#/media/File:Bridges_of_Konigsberg.png))
+[Seven Bridges of Königsberg image](https://share.google/Y3kF26J0lpogxcx08)
 
 ## License
 
