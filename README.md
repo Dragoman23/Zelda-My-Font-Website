@@ -24,13 +24,6 @@ Website Link: [Zelda Based Font Web App](zelda-my-font-website.vercel.app)
 - JavaScript - button and backend logic
 
 
-
-## Author
-Main Author: Dragoman23
-
-GitHub: [@Dragoman23](https://github.com/Dragoman23)
-
-
 ## Run locally
 
 Clone the repository:
@@ -70,11 +63,17 @@ Zelda-My-Font-Website/
 └── README.md
 ```
 
+## Author
+Main Author: Dragoman23
+
+GitHub: [@Dragoman23](https://github.com/Dragoman23)
+
+
 ## AI Usage/Outside Sources
 
 Some AI was used to help with minimal amounts of debugging and to get me my frequencies and clear explanations of hints
 
-Seven Bridges of Königsberg image - https://share.google/f0emcEj0Utk65JWwu
+[Seven Bridges of Königsberg image]([https://share.google/f0emcEj0Utk65JWwu](https://commons.wikimedia.org/wiki/File:Bridges_of_Konigsberg.png#/media/File:Bridges_of_Konigsberg.png))
 
 ## License
 
