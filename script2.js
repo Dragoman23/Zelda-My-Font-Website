@@ -1,37 +1,85 @@
 console.log("Script loaded.");
 const frequencyButton = document.getElementById('frequency-button');
-const wordFrequencyButton = document.getElementById("words-frequency-button");
-const oneLeterButton = document.getElementById("isolate-words-button");
-const threeFrequencyButton = document.getElementById("most-frequenct-button");
-const vowelFrequencyButton = document.getElementById("vowel-frequency");
+const cipherLengthButton = document.getElementById("cipher-length");
 const cipherButton = document.getElementById("cipher-hint-button");
 const mapButton = document.getElementById("map-hint-button");
 const backToOriginalButton = document.getElementById("back-to-original-button");
 const translationButton = document.getElementById("translation-button");
+const groupingButton = document.getElementById("grouping");
+const normalizeButton = document.getElementById("full-translate");
+const coincidenceButton = document.getElementById("coincidence");
 
 const letter = document.createElement("letter");
-const word = document.createElement("word");
-const one = document.createElement("one");
-const three = document.createElement("three");
-const vowel = document.createElement("vowel");
+const length = document.createElement("length");
 const cipher = document.createElement("cipher");
-const map = document.createElement("map");
-const translation = document.createElement("translation")
+const translation = document.createElement("translation");
+const normalize = document.createElement("normalize");
+const coincidence = document.createElement("coincidence");
+const swapText = document.querySelector(".translate-text p.my-font");
+const swap = document.createElement("swap");
+const originalText = swapText.innerHTML;
 
 
 backToOriginalButton.addEventListener('click', function() {
     const container = document.querySelector(".translate-text");
-    [letter, word, one, three, vowel, cipher, translation].forEach(el => {
+    [letter, length, cipher, translation,swap, normalize].forEach(el => {
         if (container.contains(el)) {
             container.removeChild(el);
         }
-    })
+    });
     document.getElementById('konigsberg-image').classList.remove('revealed');
+    document.getElementById('secret-text').classList.remove('revealed');
+
+    swapText.classList.remove('normal-font');
+    swapText.classList.add('my-font');
+    swapText.innerHTML = originalText;
+});
+
+coincidenceButton.addEventListener('click', function() {
+    coincidence.innerHTML= `
+    <span class="normal-font">One way to find the key length is to use the Index of Coincidence(IC).</span><br>
+    <span class="normal-font">For normal English the IC is around 0.0667 (6.67%).</span><br>
+    <span class="normal-font">Take every 2nd letter of the text and put it into a group. Calculate the IC of that group, and if it isn't close to 0.0667, 2 is wrong, so move on to 3 and etc.</span><br>
+    <span class="normal-font">Once you find the correct length, your data will spike.</span><br>
+    <span class="normal-font">Have fun calculating!"</span><br>
+    <span class="normal-font">To calculate the IC use the following formula: </span><br>
+
+    <pre style="font-family: monospace; font-size: 16px; background-color: #000; padding: 5px; border-radius: 5px; line-height: 1.4; margin: 0;">
+=======================================================
+INDEX OF COINCIDENCE (IC) FORMULA
+=======================================================
+       Σ [ f_i * (f_i - 1) ]
+IC = -----------------------
+            N * (N - 1)
+
+SYMBOL DESCRIPTIONS:
+- IC  : The Index of Coincidence value.
+- Σ   : The sum total calculated across all 26 letters (A-Z).
+- f_i : The frequency (count) of an individual letter 'i'.
+- N   : The total number of alphabetic letters in the text.
+=======================================================
+    </pre>
+    `;
+    coincidence.style.fontSize = "30px";
+    document.querySelector(".translate-text").append(coincidence);
 })
 
+normalizeButton.addEventListener('click', function() {
+    document.getElementById('secret-text').classList.add('revealed');
+
+    swapText.classList.remove('my-font');
+    swapText.classList.add('normal-font');
+
+    swapText.querySelectorAll('.my-font').forEach(el => {
+        el.classList.remove("my-font");
+        el.classList.add("normal-font");
+    })
+
+
+})
 mapButton.addEventListener('click', function() {
     document.getElementById('konigsberg-image').classList.add('revealed');
-})
+});
 
 cipherButton.addEventListener('click', function() {
     cipher.innerHTML = `
@@ -39,7 +87,7 @@ cipherButton.addEventListener('click', function() {
         <span class="normal-font">Julius: a -> r</span><br>
     `/*maybe add my font to a - r*/
     document.querySelector(".translate-text").append(cipher)   
-})
+});
 
 frequencyButton.addEventListener('click', function() {
     letter.innerHTML = `
@@ -69,9 +117,18 @@ frequencyButton.addEventListener('click', function() {
         <span class="normal-font">The frequency of Y is 3</span><br>
         <span class ="normal-font">The frequency of N is 3</span><br>
         <span class="normal-font">The frequency of B is 3</span><br>
-
     `
     document.querySelector(".translate-text").append(letter)
+});
+
+cipherLengthButton.addEventListener('click', function() {
+    length.innerHTML=`
+    <span class="normal-font">The length of the V cipher is 5</span><br>
+    <span class="normal-font">Now please don't use the cipher hint, because it would tell you too much.</span><br>
+    <span class="normal-font">Since you can't use the cipher hints, let me just say Julius...</span><br>
+    <span class="normal-font">Now get to grouping!!!</span><br>
+    `
+    document.querySelector(".translate-text").append(length)
 })
 
 translationButton.addEventListener('click', function() {
@@ -110,6 +167,20 @@ translationButton.addEventListener('click', function() {
     <span class="my-font">Z</span><span class="normal-font">: Z</span><br>
     `
     document.querySelector(".translate-text").append(translation)
-})
+});
 
-/* Finish button functionality*/
+groupingButton.addEventListener('click', function() {
+    swapText.innerHTML = `
+    <span class="my-font">|FSZGJ|NFRHT|SMYJT|GVZXG|GXSHF|HVDWC|GEWOE|MKPEU|SXSLS|NRPZI|
+KPMHA|AMEKA|QHPUI|ECZXA|QICHA|CMYJT|GMDPE|RWLJE|HXXHA|MWJRU|
+FSEWH|QSFJH|SLPFI|OLPUB|TXEKA|SMDQO|SMELT|HWXDT|GXTPE|MSHGO|
+DWEKE|MEXHV|KGGLR|HRRDB|DPWZE|KPSHH|ZHLPA|OEYGS|NQPER|HHRHS|
+SIWOM|DXSHF|KOEID|USQKI|RTCRB|KIXSV|IJTHF|</span>
+`
+    swap.innerHTML =`
+    <span class="normal-font">Look at just the first letter of every group!</span><br>
+    <span class="normal-font">Columns......</span><br>
+    `
+
+    document.querySelector(".translate-text").append(swap)
+});

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, width.user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Zelda Inspired Font Website-Level 2</title>
     <link rel="stylesheet" href="css/global.css">
 </head>
@@ -15,17 +15,21 @@
             <p>Warning: Not all buttons/methods are as useful as the others...</p>
             <p>Note: Puncation is the same font size as capital letters.</p>
             <p>There may or may not be numbers in this segment.</p>
+            <p>The hints are at the bottom.</p>
             <div class = "options">
                 <button id="translation-button">Translation Key</button>
                 <button id="frequency-button">Letter Frequency(Hard)</button>
-                <button id="vowel-frequency">Vowel Frequency</button>
-                <button id="words-frequency-button">Word Frequency</button>
-                <button id="isolate-words-button">Isolate the 1-Letter Words</button>
-                <button id="most-frequent-button">Most Frequenct 3-Letter Word</button>
-                <button id="one-number-button">Translation of 1 Number</button>
+                <button id="cipher-length">Cipher Length</button>
                 <button id="cipher-hint-button">C Hint</button>
                 <button id="map-hint-button">Map Hint</button>
+                <button id="grouping">Grouping Button</button>
+                <button id="full-translate">Translate the Entire Text</button>
+                <button id="coincidence">Coincidence Rates(Friedman Test)</button>
                 <button id="back-to-original-button">Back to Original Text</button>
+            </div>
+            <div>
+                <p id="secret-text" class="hidden-text">You tried to take the easy way out didn't you. Well, guess what! This puzzle is not that easy</p>
+                
             </div>
             <div class="image">
                 <img class="hidden-image" id = "konigsberg-image" src = "Königsberg.png" width="600">

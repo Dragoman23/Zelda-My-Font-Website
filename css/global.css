@@ -139,3 +139,11 @@ html, body{
 .hidden-image.revealed {
     display: block;
 }
+
+.hidden-text {
+    display: none;
+}
+
+.hidden-text.revealed {
+    display: block;
+}
