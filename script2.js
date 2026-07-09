@@ -250,14 +250,14 @@ inputField.addEventListener('keydown', function(event) {
 
         const userGuess = inputField.value.trim();
 
-        const correctPasskey = "No";
-
-        if (userGuess === correctPasskey) {
+        const correctPasskeys = ["No", "NO", "no", "nO"];
+        
+        if (correctPasskeys.includes(userGuess)) {
             feedbackMessage.textContent = "Correct! You have completed the puzzle...";
             feedbackMessage.className = "feedback-message show correct";
 
             setTimeout(() => {
-                window.location.href = "challenge1.html";
+                window.location.href = "index.html";
             }, 1200); 
         } else {
             feedbackMessage.textContent = "Wrong Passkey. Look at the text, hints, and ciphers again.";
