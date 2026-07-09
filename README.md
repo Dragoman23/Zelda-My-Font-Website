@@ -1,15 +1,11 @@
 # Zelda-My-Font-Website
 A website based on the Sheikah language from Legend of Zelda: Breath of the Wild. I combined this font with some cryptography, linguistics, and math, including Caesar ciphers, the Vigenère cipher, and the Seven Bridges of Königsberg. There are three interconnected websites(Challenge 1, Challenge 2, and HTML) that use a mix of my font/language and a normal font. I have also added various hint buttons that help people translate and decode the passages, allowing them to find the password needed to move to the next page. I hope to teach people some basic linguistic and cryptographic properties. 
 
-# Stopwatch Web App
-
-A fast, minimalist stopwatch built with vanilla HTML, CSS, and JavaScript for accurate timing down to the millisecond.
-
 ## Live Interface Preview
 
-![Demo Screenshot 1](images/Screenshot 2026-07-08 222501.png)
+![Demo Screenshot 1](images/Screenshot_Zelda1.png)
 
-![Demo Screenshot 2](images/Stopwatch_Website_Demo_Image2.png)
+
 
 ## Demo URL
 
