@@ -257,7 +257,7 @@ inputField.addEventListener('keydown', function(event) {
             feedbackMessage.className = "feedback-message show correct";
 
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "congrats.html";
             }, 1200); 
         } else {
             feedbackMessage.textContent = "Wrong Passkey. Look at the text, hints, and ciphers again.";
